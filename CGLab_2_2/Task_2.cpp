@@ -1,19 +1,21 @@
-п»ї#include <GL/glut.h>
+#include <GL/glut.h>
 #include <stdlib.h>
 #include <math.h>
 #include <windows.h>
 #define PI 3.1459
-GLfloat R = 640.0 / 480; //Р¤РѕСЂРјР°С‚РЅРѕРµ СЃРѕРѕС‚РЅРѕС€РµРЅРёРµ
-GLfloat w = 70;  //РЁРёСЂРёРЅР° РјРёСЂРѕРІРѕРіРѕ РѕРєРЅР°
-GLfloat h; //Р’С‹СЃРѕС‚Р° РјРёСЂРѕРІРѕРіРѕ РѕРєРЅР°
-GLfloat l, r, b, t; //РџР°СЂР°РјРµС‚СЂС‹ РјРёСЂРѕРІРѕРіРѕ РѕРєРЅР°
+GLfloat R = 640.0 / 480; //Форматное соотношение
+GLfloat w = 70;  //Ширина мирового окна
+GLfloat h; //Высота мирового окна
+GLfloat l, r, b, t; //Параметры мирового окна
 GLfloat f = 45.0;
 GLfloat scale = 1;
 GLfloat delta = 0.2;
+GLfloat tX = 10.0;
+GLfloat tY = 10.0;
 
 void init(void)
 {
-	h = w / R; l = -w / 2; r = w / 2; b = -h / 2; t = h / 2; //Р Р°СЃС‡РµС‚ РїР°СЂР°РјРµС‚СЂРѕРІ РјРёСЂРѕРІРѕРіРѕ РѕРєРЅР°
+	h = w / R; l = -w / 2; r = w / 2; b = -h / 2; t = h / 2; //Расчет параметров мирового окна
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
@@ -59,36 +61,43 @@ void scene(void)
 
 	fig0();
 
-	glTranslatef(10.0, 10.0, 0.0);
+	glTranslatef(tX, tY, 0.0);
 	glRotatef(f, 0.0, 0.0, 1.0);
-	fig1();
 
-	glPopMatrix();
-	glFlush();
-	glutSwapBuffers();
 	int count = 0;
-
 	if (count == 0)
 	{
+		tY -= 10.0;
 		f += 255;
 		count++;
 	}
 	else if (count == 1)
 	{
+		tX -= 10.0;
 		f += 90;
 		count++;
 	}
 	else if (count == 2)
 	{
+		tY += 10.0;
 		f += 90;
 		count++;
 	}
 	else if (count == 3)
 	{
+		tX += 10.0;
 		f += 120;
 		count = 0;
 	}
-	Sleep(1000);
+	fig1();
+
+	glPopMatrix();
+	glFlush();
+	glutSwapBuffers();
+
+
+
+	Sleep(2000);
 }
 
 void main(int argc, char** argv)

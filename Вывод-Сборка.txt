@@ -1,0 +1,8 @@
+﻿Сборка начата…
+1>------ Сборка начата: проект: CGLab_2_2, Конфигурация: Debug Win32 ------
+1>CGLab_2_2.cpp
+1>C:\Users\Damir\source\repos\CGLab_2\CGLab_2_2\CGLab_2_2.cpp(98,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+1>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(1074,5): error MSB6006: "link.exe" завершилась с кодом 1168.
+1>LINK : fatal error LNK1168: не удается открыть C:\Users\Damir\source\repos\CGLab_2\Debug\CGLab_2_2.exe для записи
+1>Сборка проекта "CGLab_2_2.vcxproj" завершена с ошибкой.
+========== Сборка: успешно: 0, с ошибками: 1, без изменений: 0, пропущено: 0 ==========
