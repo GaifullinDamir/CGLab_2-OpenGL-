@@ -29,16 +29,7 @@ void reshape(GLsizei W, GLsizei H)
 	else glViewport(0, 0, H * R, H);
 }
 
-//void showAxis(void)
-//{
-//	glColor3f(0.0f, 0.0f, 0.0f);
-//	glBegin(GL_LINES);
-//	glVertex2f(0, 0);
-//	glVertex2f(0, t);
-//	glVertex2f(0, 0);
-//	glVertex2f(r, 0);
-//	glEnd();
-//}
+
 
 void fig0(void)
 {
