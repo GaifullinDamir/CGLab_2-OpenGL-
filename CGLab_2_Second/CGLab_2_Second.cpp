@@ -72,13 +72,15 @@ void scene(void)
 	}
 	else if (count == 1)
 	{
-		tX -= 20;
+		tX -= 26.2;
+		tY -= 3.5;
 		f += 90;
 		count++;
 	}
 	else if (count == 2)
 	{
-		tY += 20;
+		tY += 24.9;
+		tX += 8.9;
 		f += 90;
 		count++;
 	}
@@ -88,6 +90,7 @@ void scene(void)
 		f += 120;
 		count = 0;
 	}
+
 	fig1();
 
 	glPopMatrix();
